@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일본어 단어 퀴즈 | 日本語クイズ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>日本語クイズ</h1>
+      <p class="subtitle">일본어 단어 퀴즈</p>
+    </header>
+
+    <main class="main">
+      <!-- 시작 화면 -->
+      <section id="start-screen" class="screen active">
+        <div class="start-content">
+          <p class="start-desc">일본어 단어의 뜻을 맞춰보세요.<br>5문제씩 출제됩니다.</p>
+          <button id="start-btn" class="btn btn-primary">퀴즈 시작</button>
+          <p class="contact-intro">일본인 친구를 만나고 싶으면 클릭하세요</p>
+          <button type="button" id="contact-open-btn" class="btn btn-outline">연락하기</button>
+        </div>
+      </section>
+
+      <!-- 퀴즈 화면 -->
+      <section id="quiz-screen" class="screen">
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p class="question-number" id="question-num">1 / 5</p>
+        <div class="question-area">
+          <p class="question-label">다음 단어의 뜻은?</p>
+          <p class="question-word" id="question-word">単語</p>
+          <p class="question-reading" id="question-reading">たんご</p>
+        </div>
+        <ul class="choices" id="choices">
+          <li><button class="choice-btn" data-index="0"></button></li>
+          <li><button class="choice-btn" data-index="1"></button></li>
+          <li><button class="choice-btn" data-index="2"></button></li>
+          <li><button class="choice-btn" data-index="3"></button></li>
+        </ul>
+        <p class="feedback" id="feedback"></p>
+        <button id="next-btn" class="btn btn-secondary" style="display: none;">다음 문제</button>
+      </section>
+
+      <!-- 결과 화면 -->
+      <section id="result-screen" class="screen">
+        <div class="result-content">
+          <h2>퀴즈 완료!</h2>
+          <p class="score-text" id="score-text">5문제 중 4문제 맞춤</p>
+          <p class="score-percent" id="score-percent">80%</p>
+          <button id="restart-btn" class="btn btn-primary">다시 풀기</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>일본어 공부 화이팅! 頑張って！</p>
+    </footer>
+  </div>
+
+  <!-- 연락하기 모달 -->
+  <div id="contact-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="contact-backdrop"></div>
+    <div class="modal-content">
+      <h2 class="modal-title">연락하기</h2>
+      <p class="modal-desc">일본인 친구를 만나고 싶으시면 아래 정보를 입력해 주세요.</p>
+      <form id="contact-form" class="contact-form">
+        <label class="form-label">
+          <span>이름</span>
+          <input type="text" name="name" required placeholder="이름을 입력하세요" autocomplete="name">
+        </label>
+        <label class="form-label">
+          <span>전화번호</span>
+          <input type="tel" name="phone" required placeholder="010-0000-0000" autocomplete="tel">
+        </label>
+        <label class="form-label">
+          <span>이메일</span>
+          <input type="email" name="email" required placeholder="example@email.com" autocomplete="email">
+        </label>
+        <p id="contact-form-msg" class="form-msg"></p>
+        <div class="form-actions">
+          <button type="button" id="contact-close-btn" class="btn btn-secondary">취소</button>
+          <button type="submit" id="contact-submit-btn" class="btn btn-primary">제출하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

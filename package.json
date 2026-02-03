@@ -1,0 +1,15 @@
+{
+  "name": "japanese-quiz",
+  "version": "1.0.0",
+  "description": "일본어 단어 퀴즈 & 연락하기",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "resend": "^3.2.0"
+  }
+}
