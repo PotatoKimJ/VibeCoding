@@ -23,6 +23,14 @@ node server.js
 3. 브라우저에서 **http://localhost:3000** 접속
 4. "일본인 친구를 만나고 싶으면 클릭하세요" → **연락하기** 버튼으로 이름/전화번호/이메일 입력 후 제출하면 `ekfmfmd2412@gmail.com`으로 메일이 전송됩니다.
 
+## Vercel 배포 시 연락하기 설정
+
+Vercel에 배포한 경우, 연락하기 메일 전송을 위해 **Vercel 대시보드**에서 환경 변수를 설정하세요.
+
+1. [Vercel](https://vercel.com) → 해당 프로젝트 → **Settings** → **Environment Variables**
+2. `RESEND_API_KEY` 추가, 값에 Resend에서 발급한 API 키 입력 (예: `re_xxxx...`)
+3. 저장 후 프로젝트 **재배포** (Redeploy)
+
 ## 환경 변수
 
 | 변수 | 설명 |
